@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+    	#myDiv {
+    		padding: 20px;
+    	}
+    	#first {
+    		padding: 20px;
+    		border: 3px solid green;
+    	}
+    	#second {
+    		padding: 20px;
+    		border: 3px solid blue;
+    	}
+    	#third {
+    		padding: 20px;
+    		border: 3px solid red;
+    	}
+    	#fourth {
+    		padding: 20px;
+    		border: 3px solid grey;
+    	}
+    	#fifth {
+    		padding: 20px;
+    		border: 3px solid brown;
+    	}
+    	input {
+    		display: flex;
+    		margin: 10px;
+    	}
+    </style>
+</head>
+<body>
+    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления. Используйте только один обработчик.
+    Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы, подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+    <div id="myDiv">
+	    <div id="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.. <input type="button" name="remove" value="Удалить"></div>
+	    <div id="second">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.. <input type="button" name="remove" value="Удалить"></div>
+	    <div id="third">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.. <input type="button" name="remove" value="Удалить"></div>
+	    <div id="fourth">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.. <input type="button" name="remove" value="Удалить"></div>
+	    <div id="fifth">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.. <input type="button" name="remove" value="Удалить"></div>
+    </div>
+    <script type="text/javascript">
+    	window.onload = function() {
+    		var parent = document.querySelector('#myDiv');
+    		parent.addEventListener('click', function(e) {
+    			var target = e.target;
+    			if (target.tagName !== 'INPUT') {
+    				return alert('Для удаления нажмите на кнопку "Удалить"');
+    			} else {
+    				this.removeChild(target.parentNode)
+    			}
+    		})
+    	} 
+    </script>
+</body>
+</html>

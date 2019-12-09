@@ -1,0 +1,40 @@
+<!--Создайте ссылку и див с текстом внутри, который изначально при загрузке страницы будет скрыт. При клике на ссылку див появляется, если повторно нажать ссылку див и текст должны вернуться. Также создайте кнопку, которая будет отменять выполнение обработчика клика по ссылке.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+        	var a = document.querySelector('a');
+            var div = document.querySelector('div');
+            a.addEventListener("click", showDiv);
+            function showDiv() {
+            	div.classList.toggle("hidden");
+            }
+            var input = document.querySelector('input');
+            input.addEventListener('click', removeHandler);
+            function removeHandler() {
+            	a.removeEventListener("click", showDiv); 
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="#">
+        <div class="hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</div>
+    </a>
+    <input type="button" value="Остановить обработчик">
+</body>
+</html>
+
